@@ -1,0 +1,291 @@
+ *{
+    margin:0px;
+    padding:0px;
+  }
+  body {
+    overflow-y: hidden;
+    background-color: #F8F8FF;
+    height: 700px;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+    list-style: none;
+    text-decoration: none;
+    overflow-x: hidden;
+    }
+    .header{
+      z-index:10;
+      position: fixed;
+      height: 50px;
+      top: 0;
+      width: 100%;
+      padding: 5px;
+      background: #F8F8FF;
+      opacity: 1;
+      border-bottom: 2px solid gray;
+      }
+    .links{
+      font-family: 'Montserrat',sans-serif;
+    }
+    .In{
+      text-align: right;
+      position: relative;
+      bottom: 10px;
+      right: 1px;
+      font-family: 'Montserrat',sans-serif;
+    }
+    .logotop{
+      padding: 0px;
+      margin: 0px;
+      height: 45px;
+      position: relative;
+      top: 1px;
+      left: 5px;
+    }
+    .SignUp{
+      padding: 10px 20px;
+      position: relative;
+      margin-right: 35px;
+      bottom: 24px;
+        background-color: #F8F8FF;
+        color: #4285f4;
+        text-align: center;
+        transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius:10px;
+    }
+    .SignUp:hover{
+      background-color: white;
+    }
+    .LogIn{
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #F8F8FF;
+        color: #4285f4;
+        position: relative;
+        bottom: 24px;
+        right: 25px;
+        text-align: center;
+        transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius:10px;
+    }
+    .LogIn:hover{
+      background-color: white;
+    }
+.logo {
+
+
+      font-family: 'Montserrat', sans-serif;
+      font-size: 120px;
+      font-height: 120px;
+      padding-top: 1px;
+      color: #F8F8FF;
+      cursor: default;
+      text-align: center;
+      margin: auto 0;
+    }
+
+    .wrapper {
+      opacity: 1;
+      position:relative;
+      
+      height: 100%;
+      float: left;
+      background: linear-gradient(to bottom right, #0066ff, #3399ff);
+
+      top:-10px;
+    }
+
+    .wrapper .sidebar {
+
+      position:relative;
+
+      width: 140px;
+
+
+
+      padding: 20px;
+      padding-top:70px;
+      margin:0px 10px;
+      margin-left:15px;
+
+
+
+    }
+
+    .wrapper .sidebar ul li {
+      position: relative;
+      left: -15px;
+      padding: 15px;
+      border-bottom: 1px solid white;
+      list-style: none;
+      font-weight: bold;
+      width:110px;
+
+
+    }
+
+    .wrapper .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: lighter;
+    }
+
+    ul li:hover a {
+      padding-left: 15px;
+      transition: .6s;
+    }
+    .images{
+      margin-top: 100px;
+    }
+    #i { border-radius: 10px; }
+
+  .container{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+  }
+  .img-one{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .img-two, .img-three, .img-four, .img-five, .img-six, .img-seven, .img-eight{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .img-one{
+    animation: diaup 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-two{
+    animation: diaups 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-three{
+    animation: slideright 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-four{
+    animation: sliderights 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-five{
+    animation: diadown 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-six{
+    animation: diadowns 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-seven{
+    animation: dialeft 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  .img-eight{
+    animation: dialefts 2s 1 forwards;
+    animation-delay: 1ms;
+  }
+  @keyframes diaup{
+    to { transform: translate(250px,190px); }
+  }
+  @keyframes diaups{
+    to { transform: translate(-250px,190px); }
+  }
+  @keyframes slideright{
+    to { transform: translateX(300px); }
+  }
+  @keyframes sliderights{
+    to { transform: translateX(-300px); }
+  }
+  @keyframes diadown{
+    to { transform: translate(-250px,-190px); }
+  }
+  @keyframes diadowns{
+    to { transform: translate(250px,-190px); }
+  }
+  @keyframes dialeft{
+    to { transform: translateY(225px); }
+  }
+  @keyframes dialefts{
+    to { transform: translateY(-225px); }
+  }
+  .main{
+    background-color: #ffffff;
+    width: 400px;
+    height: 290px;
+    margin: 190px auto;
+    border-radius: 25px;
+    box-shadow: 0px 1px 15px 2px rgba(0, 0, 0, 0.14);
+    }
+.line{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 400px; 
+    max-width: 290px;
+    margin-left: 55px;
+    margin-bottom: 20px;
+}
+.sign{
+    padding-top: 40px;
+    color: #4285f4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+} 
+.un{
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 20px;
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+} 
+.un:focus{
+        border: 2px solid rgba(0, 0, 0, 0.18) ;
+        
+    }
+    
+.submit{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to bottom right, #0066ff, #3399ff);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 30%;
+    margin-bottom: 10%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+.submit:active{
+    outline: none;
+}
+.f{
+    text-decoration: none;
+    color: #ffffff;
+}

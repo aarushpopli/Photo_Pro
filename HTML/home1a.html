@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='https://share.guillaume-thibord.com/codepen/lib/aos-master/dist/aos.css'>
+	<link rel="shortcut icon" type="image/png" href="..\Images\P.png">
+	<link rel="stylesheet" type="text/css" href="..\CSS\home1.css">
+    <link href="https://fonts.googleapis.com/css?family=Spartan:300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+	<title>Photo Pro</title>
+</head>
+<body bgcolor="#F8F8FF">
+	<div class="progress-container">
+    	<div class="progress-bar" id="myBar"></div>
+    </div>
+	<div class="header">
+		<div class="In"><a href="upload1.html" class="SignUp">Photos</a><a class="LogIn" href="home.html">Log Out</a></div><div class="links"><a href="home1a.html"><img class="logotop" src="..\Images\logo.png"></a></div>
+	</div>
+<div class="dp"><p id="greetings">Good Day</p></div>
+<script type="text/javascript">
+	var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet= 'Good Day';
+
+    if (hrs >= 3 && hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs < 16)
+        greet = 'Good Afternoon';
+    else if (hrs >= 16 && hrs < 22)
+        greet = 'Good Evening';
+    else if (hrs >= 22 && hrs < 24)
+        greet = 'Good Night';
+
+    document.getElementById('greetings').innerHTML = greet;
+
+	window.onscroll = function() {myFunction()};
+  	function myFunction() {
+  	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  	var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  	var scrolled = (winScroll / height) * 100;
+  	document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+	<br>
+	<section aos="zoom-out">
+	<div class="grad">
+		<div class="images">
+<pre>
+<a href="https://m.facebook.com/login/?locale2=en_GB" target="_blank"><img class="hide" src="..\Images\logo1.png" height="20px" align="left" style="position: relative; right: 320px; bottom: 10px; padding-top: 2px"></a>
+<a href="https://www.instagram.com/accounts/login/" target="_blank"><img class="hide" src="..\Images\logo2.png" height="20px" align="left" style="position: relative; right: 320px; bottom: 10px; padding-top: 2px"></a>
+<a href="https://twitter.com/login" target="_blank"><img class="hide" src="..\Images\logo3.png" height="20px" align="left" style="position: relative; right: 320px; bottom: 10px; padding-top: 2px;"></a>
+</pre>
+<div>
+	<pre class="handles">
+		<div><a href="https://m.facebook.com/login/?locale2=en_GB" class="prolinks" target="_blank">@photopro</a></div>
+		<div><a href="https://www.instagram.com/accounts/login/" class="prolinks" target="_blank">@photopro</a></div>
+		<div><a href="https://twitter.com/login" class="prolinks" target="_blank">@photopro</a></div>
+	</pre>
+</div>
+			<div class="col"><img src="..\Images\1.jpg" height="180px"></div>
+			<div class="col"><img src="..\Images\2.jpg" height="180px"></div>
+			<div class="col"><img src="..\Images\3.jpg" height="180px"></div>
+			<div class="col"><img src="..\Images\4.jpg" height="180px"></div>
+			<div class="line">One place to save your memories at ease.</div>
+			<div class="overlay">
+				<div class="heading1" align="center">Photo Pro</div>
+			</div>
+		</div>
+	</div>
+</section>
+	
+	<br>
+	<center>
+		<section aos="fade-up" aos-duration="1000">
+	<div class="detail1">Back up unlimited photos and videos. Access them from any phone, tablet, or computer on photopro.in – your photos will be safe, secure, and always with you.</div>
+	<img src="..\Images\demo1.png" height="400px">
+</section>
+
+	<section aos="fade-down" aos-duration="1000">
+	<div class="detail2">
+	<div class="detail3">Manage photos easily.</div>
+	<img src="..\Images\demo2.png" height="400px">
+	</div>
+</section>
+
+	<section aos="fade-left" aos-duration="1000">
+	<div class="detail1a">Share photos with your friends.
+	<div class="container">
+		<img src="..\Images\11.jpg" id="i" class="img-one" height="110px" />
+		<img src="..\Images\22.jpg" id="i" class="img-two" height="110px" />
+		<img src="..\Images\33.jpg" id="i" class="img-three" height="110px" />
+		<img src="..\Images\44.jpg" id="i" class="img-four" height="110px"/>
+	</div>
+	</div>
+	</section>
+
+	<section aos="fade-right" aos-duration="1000">
+	<div class="detail2">
+	<div class="detail3">Relive your precious moments.</div>
+	<img src="..\Images\demo3.png" height="400px">
+	</div>
+	</section>
+	</center>
+	<br>
+	<div class="footer">
+		<div><img class="logobottom" src="..\Images\P.png"></div>
+		<a class="about" href="about.html" target="_blank">About</a>
+		<a class="feedback" href="feedback2.html">Feedback</a>
+	</div>
+	<script src='https://share.guillaume-thibord.com/codepen/lib/aos-master/dist/aos.js'></script>
+<script id="rendered-js">
+AOS.init({
+  duration: 1200 });
+</script>
+</body>
+</html>

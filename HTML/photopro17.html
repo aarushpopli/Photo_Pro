@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Photos</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/png" href="..\Images\P.png">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <style>
+    ::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track { 
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0066ff;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3399ff; 
+}
+    body {
+      background-color: #F8F8FF;
+      height: 700px;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat',sans-serif;
+      list-style: none;
+      text-decoration: none;
+      overflow-x: hidden;
+    }
+
+    .header {
+      z-index: 10;
+      position: fixed;
+      height: 50px;
+      top: 0;
+      width: 100%;
+      padding: 5px;
+      background: #F8F8FF;
+      opacity: 1;
+      border-bottom: 2px solid gray;
+    }
+
+    .links {
+      font-family: 'Montserrat',sans-serif;
+    }
+
+    .In {
+      text-align: right;
+      position: relative;
+      bottom: 10px;
+      right: 1px;
+      font-family: 'Montserrat',sans-serif;
+    }
+
+    .logotop {
+      padding: 0px;
+      margin: 0px;
+      height: 45px;
+      position: relative;
+      top: 1px;
+      left: 5px;
+    }
+
+    .SignUp {
+      padding: 10px 20px;
+      position: relative;
+      margin-right: 35px;
+      bottom: 24px;
+      background-color: #F8F8FF;
+      color: #4285f4;
+      text-align: center;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+
+    .SignUp:hover {
+      background-color: white;
+    }
+
+    .LogIn {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #F8F8FF;
+      color: #4285f4;
+      position: relative;
+      bottom: 24px;
+      right: 25px;
+      text-align: center;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .LogIn:hover {
+      background-color: white;
+    }
+
+    .wrapper {
+      opacity: 1;
+      position: relative;
+      top: -10px;
+
+      height: 420%;
+      float: left;
+      background: linear-gradient(to bottom right, #0066ff, #3399ff);
+
+    }
+
+    .wrapper .sidebar {
+
+      position: relative;
+
+
+      width: 140px;
+
+
+
+      padding: 20px;
+      padding-top: 70px;
+      margin:0px 10px;
+      margin-left:15px;
+
+
+
+    }
+
+    .wrapper .sidebar ul li {
+      position: relative;
+      left: -15px;
+      padding: 15px;
+      border-bottom: 1px solid white;
+      list-style: none;
+      font-weight: 300;
+      width:110px;
+
+
+    }
+
+    .wrapper .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+font-family: 'Montserrat', sans-serif;
+    }
+
+    ul li:hover a {
+      padding-left: 15px;
+      transition: .6s;
+    }
+    html,body{
+      margin:0px;
+      padding:0px;
+
+    }
+h1{
+      text-align:center;
+      font-family:'Montserrat',sans-serif;
+      font-weight: 300;
+      margin:15px 0 30px;
+    }
+
+    .album{
+      position:relative;
+     left:80px;
+      top:50px;
+      width:80%;
+       display: flex;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+    }
+    *{
+      text-decoration : none;
+      margin:0px;
+      padding:0px;
+    }
+    .gallery{
+      margin-top:-20px;
+      position:relative;
+      left:20px;
+      text-decoration:none;
+      
+    }
+    .gallery img{
+      width:300px;
+      transition:1s;
+      padding:6px;
+        text-decoration:none;
+        border-radius: 10px;
+
+    }
+
+
+    .gallery img:hover{
+      transform:scale(1.1);
+      border-radius: 10px;
+    }
+
+.lightbox {
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.lightbox:target {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity;
+}
+
+#o {
+  background-color: white;
+  width: min-content;
+  height: min-content;
+  margin: auto;
+  margin-top: 60px;
+  box-shadow: 0px 0px 35px black;
+  padding: 5px 10px;
+}
+
+#i img {
+  max-height: 400px;
+  max-width: 800px;
+}
+
+.lightbox a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #4285f4;
+}
+
+#cross {
+  float: right;
+}
+
+#next {
+  float: right;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="links"><a href="home1.html"><img class="logotop" src="..\Images\logo.png"></a></div>
+    <div class="In"><a href="upload2.html" class="SignUp">Upload</a><a class="LogIn" href="share1.html">Share</a></div>
+  </div>
+  <br>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><a href="photopro17.html">Photos</a></li>
+        <li><a href="photo pro7.html">Albums</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+
+<div class="album">
+<center>  <h1 style="font-family: 'Montserrat',sans-serif;">PHOTOS</h1> </center>
+  <div class="gallery">
+    <a href="#lg1"><img src="..\Images\f11.jpg"></a>
+    <a href="#lg2"><img src="..\Images\f22.jpg"><a>
+    <a href="#lg3"><img src="..\Images\f33.jpg"></a>
+    <a href="#lg4"><img src="..\Images\f44.jpg"></a>
+    <a href="#lg5"><img src="..\Images\f55.jpg"></a>
+    <a href="#lg6"><img src="..\Images\f66.jpg"></a>
+    <a href="#lg11" ><img src="..\Images\fr11.jpeg">
+    <a href="#lg12" ><img src="..\Images\fr12.jpg">
+    <a href="#lg13" ><img src="..\Images\fr13.jpg">
+    <a href="#lg14" ><img src="..\Images\fr14.jpg">
+    <a href="#lg15" ><img src="..\Images\fr15.jpg">
+    <a href="#lg16" ><img src="..\Images\fr16.jpg">
+      <a href="#lg21" ><img src="..\Images\st11.jpg">
+      <a href="#lg22" ><img src="..\Images\st12.jpg">
+      <a href="#lg23" ><img src="..\Images\st13.jpg">
+      <a href="#lg24" ><img src="..\Images\st14.jpg">
+      <a href="#lg25" ><img src="..\Images\st15.jpg">
+      <a href="#lg26" ><img src="..\Images\st16.jpg">
+        <a href="#lg31" ><img src="..\Images\cf11.jpg">
+        <a href="#lg32" ><img src="..\Images\cf12.jpg">
+        <a href="#lg33" ><img src="..\Images\cf13.jpeg">
+        <a href="#lg34" ><img src="..\Images\cf14.jpg">
+        <a href="#lg35" ><img src="..\Images\cf15.jpg">
+        <a href="#lg36" ><img src="..\Images\cf16.jpg">
+          <a href="#lg41" ><img src="..\Images\ch11.png">
+          <a href="#lg42" ><img src="..\Images\ch12.jpg">
+          <a href="#lg43" ><img src="..\Images\ch13.jpg">
+          <a href="#lg44" ><img src="..\Images\ch14.jpg">
+          <a href="#lg45" ><img src="..\Images\ch15.jpg">
+          <a href="#lg46" ><img src="..\Images\ch16.jpg">
+            <a href="#lg51" ><img src="..\Images\gp11.jpg">
+            <a href="#lg52" ><img src="..\Images\gp12.jpg">
+            <a href="#lg53" ><img src="..\Images\gp13.jpg">
+            <a href="#lg54" ><img src="..\Images\gp14.jpg">
+            <a href="#lg55" ><img src="..\Images\gp15.jpg">
+            <a href="#lg56" ><img src="..\Images\gp16.jpg">
+
+
+
+  </div>
+</div>
+<div class="lightbox" id="lg1">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <br>
+
+    <div id="i">
+      <img src="..\Images\f11.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg2" id="next">Next</a>
+      <a href="#work" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg2">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\f22.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg3" id="next">Next</a>
+      <a href="#lg1" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg3">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\f33.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg4" id="next">Next</a>
+      <a href="#lg2" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg4">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\f44.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg5" id="next">Next</a>
+      <a href="#lg3" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg5">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\f55.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg6" id="next">Next</a>
+      <a href="#lg4" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg6">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\f66.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg11" id="next">Next</a>
+      <a href="#lg5" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg11">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <br>
+
+    <div id="i">
+      <img src="..\Images\fr11.jpeg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg12" id="next">Next</a>
+      <a href="#lg6" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg12">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\fr12.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg13" id="next">Next</a>
+      <a href="#lg11" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg13">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\fr13.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg14" id="next">Next</a>
+      <a href="#lg12" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg14">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\fr14.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg15" id="next">Next</a>
+      <a href="#lg13" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg15">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\fr15.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg16" id="next">Next</a>
+      <a href="#lg14" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg16">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\fr16.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg21" id="next">Next</a>
+      <a href="#lg15" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg21">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <br>
+
+    <div id="i">
+      <img src="..\Images\st11.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg22" id="next">Next</a>
+      <a href="#lg16" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg22">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\st12.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg23" id="next">Next</a>
+      <a href="#lg21" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg23">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\st13.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg24" id="next">Next</a>
+      <a href="#lg22" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg24">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\st14.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg25" id="next">Next</a>
+      <a href="#lg23" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg25">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\st15.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg26" id="next">Next</a>
+      <a href="#lg24" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg26">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\st16.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg31" id="next">Next</a>
+      <a href="#lg25" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg31">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <br>
+
+    <div id="i">
+      <img src="..\Images\cf11.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg32" id="next">Next</a>
+      <a href="#lg26" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg32">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\cf12.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg33" id="next">Next</a>
+      <a href="#lg31" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg33">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\cf13.jpeg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg34" id="next">Next</a>
+      <a href="#lg32" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg34">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\cf14.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg35" id="next">Next</a>
+      <a href="#lg33" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg35">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\cf15.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg36" id="next">Next</a>
+      <a href="#lg34" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg36">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\cf16.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg41" id="next">Next</a>
+      <a href="#lg35" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg41">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <br>
+
+    <div id="i">
+      <img src="..\Images\ch11.png" alt="">
+
+    </div>
+    <p>
+      <a href="#lg42" id="next">Next</a>
+      <a href="#lg36" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg42">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\ch12.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg43" id="next">Next</a>
+      <a href="#lg41" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg43">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\ch13.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg44" id="next">Next</a>
+      <a href="#lg42" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg44">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\ch14.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg45" id="next">Next</a>
+      <a href="#lg43" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg45">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\ch15.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg46" id="next">Next</a>
+      <a href="#lg44" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg46">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\ch16.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg51" id="next">Next</a>
+      <a href="#lg45" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg51">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <br>
+
+    <div id="i">
+      <img src="..\Images\gp11.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg52" id="next">Next</a>
+      <a href="#lg46" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg52">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\gp12.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg53" id="next">Next</a>
+      <a href="#lg51" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg53">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\gp13.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg54" id="next">Next</a>
+      <a href="#lg52" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg54">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\gp14.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg55" id="next">Next</a>
+      <a href="#lg53" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg55">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\gp15.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#lg56" id="next">Next</a>
+      <a href="#lg54" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+<div class="lightbox" id="lg56">
+  <div id="o">
+    <p id="title">
+      <a href="#work" id="cross">X</a>
+    </p>
+    <div id="i">
+      <img src="..\Images\gp16.jpg" alt="">
+
+    </div>
+    <p>
+      <a href="#work" id="next">Next</a>
+      <a href="#lg55" id="prev">Previous</a>
+    </p>
+
+  </div>
+
+</div>
+</body>
+
+</html>

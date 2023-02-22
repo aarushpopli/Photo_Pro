@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="..\CSS\signup.css">
+  <link rel="shortcut icon" type="image/png" href="..\Images\P.png">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+  <title>Sign Up</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("form").submit(function(){});
+  });
+</script>
+</head>
+<body>
+  <div class="main">
+    <p class="sign" align="center">Sign Up</p>
+    <form class="form1" action="upload1.html">
+      <input class="un" type="text" align="center" placeholder="First Name" required />
+      <input class="un" type="text" align="center" placeholder="Last Name" required />
+      <input class="un" type="email" align="center" placeholder="Email" required />
+      <input class="un" minlength="6" type="password" align="center" placeholder="Password" required />
+      <button class="submit" type="submit" align="center">Sign Up</button>
+      <div class="or">OR</div>
+    </form>
+      <button class="google"><a class="g" href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign Up with Google</a></button>
+      <img src="..\Images\g.png" class="glogo">
+  </div>
+</body>
+</html>

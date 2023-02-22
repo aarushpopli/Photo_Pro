@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="..\CSS\feedback.css">
+    <link rel="shortcut icon" type="image/png" href="..\Images\P.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+	<title>Feedback</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("form").submit(function(){});
+  });
+  </script>
+</head>
+<body>
+<div class="background">
+   <div class="container">
+    <div class="screen">
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>CONTACT</span>
+            <span>US</span>
+          </div>
+          <div class="app-contact">CONTACT INFO : +91 92837 28273</div>
+        </div>
+        <div class="screen-body-item">
+            <form action="thanks1.html">
+            <div class="app-form-group">
+              <input class="app-form-control" type="name" placeholder="NAME" required />
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="email" placeholder="EMAIL" required />
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="number" placeholder="CONTACT NO" required />
+            </div>
+            <div class="app-form-group message">
+              <input class="app-form-control" type="text" minlength="10" placeholder="MESSAGE" required />
+            </div>
+            <div class="app-form-group buttons">
+              <button class="app-form-button"><a class="cancel" href="home1.html">CANCEL</a></button>
+              <button class="app-form-button">SEND</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</body>
+</html>
